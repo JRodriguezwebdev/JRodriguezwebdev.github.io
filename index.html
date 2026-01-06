@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Rodriguez | Portfolio Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-card {
+            background: #f4f4f4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skill-card h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .certifications {
+            margin-top: 2rem;
+        }
+        
+        .cert-item {
+            background: #f9f9f9;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+        
+        .cert-item h3 {
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+        
+        .cert-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #764ba2;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jose Rodriguez</h1>
+        <p>Operario de Producción | En transición a Marketing Digital, IA y Desarrollo Web</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#sobre-mi">Sobre Mí</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#formacion">Formación</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <p>Profesional con más de 15 años de experiencia como operario de producción en Stellantis, actualmente en proceso de transición hacia el mundo digital. Mi trayectoria en el sector de la automoción me ha proporcionado una sólida base en trabajo en equipo, resolución de problemas y gestión eficiente de procesos.</p>
+            <p style="margin-top: 1rem;">He decidido ampliar mis horizontes profesionales especializándome en áreas de alto crecimiento como el marketing digital, la inteligencia artificial y el desarrollo web. A través de formación continua y certificaciones reconocidas, estoy construyendo las competencias necesarias para aportar valor en el entorno digital actual.</p>
+            <p style="margin-top: 1rem;">Mi objetivo es combinar mi experiencia en entornos productivos con las nuevas tecnologías para contribuir a proyectos innovadores que marquen la diferencia.</p>
+        </section>
+        
+        <section id="habilidades">
+            <h2>Áreas de Especialización</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>🤖 Inteligencia Artificial</h3>
+                    <p>Dominio de herramientas de IA generativa como Gemini y ChatGPT. Aplicación de flujos de trabajo con IA para optimización de procesos y creación de contenido.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📱 Marketing Digital</h3>
+                    <p>Fundamentos de marketing digital, SEO, estrategias de contenido y gestión de redes sociales. Conocimiento de Google Analytics y herramientas de medición.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>💻 Desarrollo Web</h3>
+                    <p>HTML, CSS, JavaScript. Creación de sitios web profesionales y responsive. Familiaridad con Git y GitHub para control de versiones.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🔧 Producción Industrial</h3>
+                    <p>Más de 15 años de experiencia en líneas de montaje de automoción. Gestión de procesos, control de calidad y trabajo en equipo.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="formacion">
+            <h2>Formación y Certificaciones</h2>
+            <div class="certifications">
+                <div class="cert-item">
+                    <h3>IA Workflow 2025</h3>
+                    <p>BIG school | Aplicación práctica de inteligencia artificial en flujos de trabajo</p>
+                </div>
+                <div class="cert-item">
+                    <h3>Domina la IA con Gemini</h3>
+                    <p>Google Skillshop | Dominio de herramientas de IA generativa de Google</p>
+                </div>
+                <div class="cert-item">
+                    <h3>Fundamentos de Marketing Digital</h3>
+                    <p>Google Digital Academy (Skillshop) | Certificación oficial en marketing digital</p>
+                </div>
+                <div class="cert-item">
+                    <h3>Cómo funciona la inteligencia artificial generativa</h3>
+                    <p>Domestika | Fundamentos técnicos de la IA generativa</p>
+                </div>
+                <div class="cert-item">
+                    <h3>Diseño y Mantenimiento de Instalaciones de Energía Solar Fotovoltaica</h3>
+                    <p>SEPE | Formación en energías renovables</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:jrodriguez.webdev@gmail.com">jrodriguez.webdev@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Ponteareas, Galicia, España</span>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/jose-antonio-rodriguez-tellado-243138398" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/joseantoniorodrigueztellado" target="_blank">Instagram</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Jose Rodriguez. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
