@@ -3,44 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jose Rodriguez | Portfolio Profesional</title>
+    <meta name="description" content="Jose Rodriguez - Portfolio Profesional | Especialista en transición digital, marketing, IA y desarrollo web con +15 años de experiencia en Stellantis">
+    <meta name="keywords" content="desarrollo web, marketing digital, inteligencia artificial, portfolio, Stellantis, Galicia">
+    <meta name="author" content="Jose Rodriguez">
+    <title>Jose Rodriguez | Portfolio Profesional - Marketing Digital & Desarrollo Web</title>
     <style>
+        :root {
+            --primary-color: #667eea;
+            --secondary-color: #764ba2;
+            --accent-color: #f093fb;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+            --shadow-xl: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+        html {
+            scroll-behavior: smooth;
         }
         
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: var(--bg-light);
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             color: white;
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 8rem 2rem 6rem;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            animation: bgAnimate 60s linear infinite;
+        }
+        
+        @keyframes bgAnimate {
+            from { transform: translateX(0) translateY(0); }
+            to { transform: translateX(60px) translateY(60px); }
+        }
+        
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
         
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        header .subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
         }
         
-        nav {
-            background: #333;
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
             color: white;
-            padding: 1rem;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: var(--shadow-md);
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
         }
         
         nav ul {
@@ -48,94 +176,317 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         nav a {
-            color: white;
+            color: var(--text-dark);
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.3s ease;
         }
         
         nav a:hover {
-            color: #667eea;
+            color: var(--primary-color);
         }
         
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Sections */
         section {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 5rem 2rem;
         }
         
         section h2 {
-            font-size: 2rem;
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
             margin-bottom: 1.5rem;
-            color: #667eea;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 0.5rem;
+        }
+        
+        .about-text strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        /* Skills Section */
+        #habilidades {
+            background: white;
         }
         
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
         
         .skill-card {
-            background: #f4f4f4;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: var(--bg-light);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
         }
         
         .skill-card h3 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .skill-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tag {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* Projects/Certifications Section */
+        #formacion {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
         
         .certifications {
-            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
         
         .cert-item {
-            background: #f9f9f9;
-            padding: 1rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        .cert-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .cert-header {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
             margin-bottom: 1rem;
-            border-left: 4px solid #667eea;
-            border-radius: 4px;
+        }
+        
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
         }
         
         .cert-item h3 {
-            color: #333;
-            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cert-item .org {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
         }
         
         .cert-item p {
-            color: #666;
-            font-size: 0.9rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-top: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* Contact Section */
+        #contacto {
+            background: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+            align-items: start;
         }
         
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 2rem;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: all 0.3s ease;
         }
         
-        .contact-item a {
-            color: #667eea;
+        .contact-item:hover {
+            background: white;
+            box-shadow: var(--shadow-md);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-details h3 {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-details a,
+        .contact-details p {
+            color: var(--text-dark);
             text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         
-        .contact-item a:hover {
-            text-decoration: underline;
+        .contact-details a:hover {
+            color: var(--primary-color);
         }
         
         .social-links {
@@ -144,131 +495,317 @@
             margin-top: 1rem;
         }
         
-        .social-links a {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: #667eea;
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
         }
         
-        .social-links a:hover {
-            background: #764ba2;
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
         
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .cta-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-box .btn {
+            background: white;
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
         footer {
-            background: #333;
+            background: linear-gradient(135deg, #2d3748, #1a202c);
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 3rem 2rem;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            header h1 { font-size: 2.5rem; }
+            header .subtitle { font-size: 1.1rem; }
+            section h2 { font-size: 2.2rem; }
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            
             nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+            .cta-buttons {
                 flex-direction: column;
-                gap: 1rem;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            header {
+                padding: 5rem 1.5rem 4rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Jose Rodriguez</h1>
-        <p>Operario de Producción | En transición a Marketing Digital, IA y Desarrollo Web</p>
+        <div class="container">
+            <h1>Jose Rodriguez</h1>
+            <p class="subtitle">Especialista en Transformación Digital | Marketing, IA & Desarrollo Web<br>Con +15 años de experiencia en gestión operativa en Stellantis</p>
+            <div class="cta-buttons">
+                <a href="#contacto" class="btn btn-primary">Contactar</a>
+                <a href="#sobre-mi" class="btn btn-secondary">Conocer Más</a>
+            </div>
+        </div>
     </header>
     
     <nav>
-        <ul>
-            <li><a href="#sobre-mi">Sobre Mí</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#formacion">Formación</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+        <div class="container">
+            <ul>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#habilidades">Competencias</a></li>
+                <li><a href="#formacion">Formación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
     </nav>
     
     <main>
         <section id="sobre-mi">
             <h2>Sobre Mí</h2>
-            <p>Profesional con más de 15 años de experiencia como operario de producción en Stellantis, actualmente en proceso de transición hacia el mundo digital. Mi trayectoria en el sector de la automoción me ha proporcionado una sólida base en trabajo en equipo, resolución de problemas y gestión eficiente de procesos.</p>
-            <p style="margin-top: 1rem;">He decidido ampliar mis horizontes profesionales especializándome en áreas de alto crecimiento como el marketing digital, la inteligencia artificial y el desarrollo web. A través de formación continua y certificaciones reconocidas, estoy construyendo las competencias necesarias para aportar valor en el entorno digital actual.</p>
-            <p style="margin-top: 1rem;">Mi objetivo es combinar mi experiencia en entornos productivos con las nuevas tecnologías para contribuir a proyectos innovadores que marquen la diferencia.</p>
+            <p class="section-subtitle">Profesional versátil en transición digital con sólida experiencia industrial</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Mi nombre es <strong>Jose Rodriguez</strong>, y soy un profesional con <strong>más de 15 años de trayectoria</strong> como operario de producción en <strong>Stellantis</strong>, una de las empresas líderes en el sector de la automoción a nivel mundial.</p>
+                    
+                    <p>Durante mi carrera en el ámbito industrial, he desarrollado competencias clave en <strong>gestión de procesos productivos</strong>, <strong>control de calidad</strong>, <strong>optimización de flujos de trabajo</strong> y <strong>trabajo en equipo</strong> bajo entornos de alta exigencia. Esta experiencia me ha dotado de una mentalidad analítica, orientada a resultados y con enfoque en la mejora continua.</p>
+                    
+                    <p>Actualmente, me encuentro en un emocionante proceso de <strong>transición profesional hacia el ecosistema digital</strong>, especializando</p>me en tres áreas de alto impacto: <strong>Marketing Digital</strong>, <strong>Inteligencia Artificial</strong> y <strong>Desarrollo Web</strong>.</p>
+                    
+                    <p>Mi objetivo es combinar mi experiencia en gestión operativa con las nuevas tecnologías para aportar valor en proyectos de transformación digital, ayudando a empresas a optimizar sus procesos y mejorar su presencia online.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Certificaciones</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Compromiso</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Áreas de Especialización</div>
+                    </div>
+                </div>
+            </div>
         </section>
         
         <section id="habilidades">
-            <h2>Áreas de Especialización</h2>
+            <h2>Competencias Clave</h2>
+            <p class="section-subtitle">Combinando experiencia industrial con habilidades digitales de vanguardia</p>
+            
             <div class="skills-grid">
                 <div class="skill-card">
-                    <h3>🤖 Inteligencia Artificial</h3>
-                    <p>Dominio de herramientas de IA generativa como Gemini y ChatGPT. Aplicación de flujos de trabajo con IA para optimización de procesos y creación de contenido.</p>
+                    <div class="skill-icon">🤖</div>
+                    <h3>Inteligencia Artificial</h3>
+                    <p>Experiencia práctica con herramientas de IA generativa para optimización de procesos, creación de contenido y automatización de flujos de trabajo.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Gemini AI</span>
+                        <span class="tag">ChatGPT</span>
+                        <span class="tag">Workflow Automation</span>
+                        <span class="tag">Prompt Engineering</span>
+                    </div>
                 </div>
+                
                 <div class="skill-card">
-                    <h3>📱 Marketing Digital</h3>
-                    <p>Fundamentos de marketing digital, SEO, estrategias de contenido y gestión de redes sociales. Conocimiento de Google Analytics y herramientas de medición.</p>
+                    <div class="skill-icon">📱</div>
+                    <h3>Marketing Digital</h3>
+                    <p>Sólidos fundamentos en estrategias digitales, SEO, gestión de contenidos y analítica web para maximizar presencia y conversión online.</p>
+                    <div class="skill-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Google Analytics</span>
+                        <span class="tag">Social Media</span>
+                        <span class="tag">Content Strategy</span>
+                    </div>
                 </div>
+                
                 <div class="skill-card">
-                    <h3>💻 Desarrollo Web</h3>
-                    <p>HTML, CSS, JavaScript. Creación de sitios web profesionales y responsive. Familiaridad con Git y GitHub para control de versiones.</p>
+                    <div class="skill-icon">💻</div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Creación de sitios web modernos, responsive y funcionales utilizando tecnologías actuales y buenas prácticas de desarrollo.</p>
+                    <div class="skill-tags">
+                        <span class="tag">HTML5/CSS3</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive Design</span>
+                        <span class="tag">Git/GitHub</span>
+                    </div>
                 </div>
+                
                 <div class="skill-card">
-                    <h3>🔧 Producción Industrial</h3>
-                    <p>Más de 15 años de experiencia en líneas de montaje de automoción. Gestión de procesos, control de calidad y trabajo en equipo.</p>
+                    <div class="skill-icon">🔧</div>
+                    <h3>Gestión Operativa</h3>
+                    <p>Amplia experiencia en optimización de procesos productivos, control de calidad y trabajo en equipos de alto rendimiento.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Lean Manufacturing</span>
+                        <span class="tag">Control de Calidad</span>
+                        <span class="tag">Mejora Continua</span>
+                        <span class="tag">Trabajo en Equipo</span>
+                    </div>
                 </div>
             </div>
         </section>
         
         <section id="formacion">
-            <h2>Formación y Certificaciones</h2>
+            <h2>Formación & Certificaciones</h2>
+            <p class="section-subtitle">Compromiso continuo con el aprendizaje y el desarrollo profesional</p>
+            
             <div class="certifications">
                 <div class="cert-item">
-                    <h3>IA Workflow 2025</h3>
-                    <p>BIG school | Aplicación práctica de inteligencia artificial en flujos de trabajo</p>
+                    <div class="cert-header">
+                        <div class="cert-icon">🎓</div>
+                        <div>
+                            <h3>IA Workflow 2025</h3>
+                            <p class="org">BIG school</p>
+                        </div>
+                    </div>
+                    <p>Formación especializada en la aplicación práctica de inteligencia artificial para la optimización de flujos de trabajo empresariales y automatización de procesos.</p>
                 </div>
+                
                 <div class="cert-item">
-                    <h3>Domina la IA con Gemini</h3>
-                    <p>Google Skillshop | Dominio de herramientas de IA generativa de Google</p>
+                    <div class="cert-header">
+                        <div class="cert-icon">🤖</div>
+                        <div>
+                            <h3>Domina la IA con Gemini</h3>
+                            <p class="org">Google Skillshop</p>
+                        </div>
+                    </div>
+                    <p>Certificación oficial de Google en el dominio y aplicación de herramientas de IA generativa, con enfoque en productividad y creación de contenido.</p>
                 </div>
+                
                 <div class="cert-item">
-                    <h3>Fundamentos de Marketing Digital</h3>
-                    <p>Google Digital Academy (Skillshop) | Certificación oficial en marketing digital</p>
+                    <div class="cert-header">
+                        <div class="cert-icon">📊</div>
+                        <div>
+                            <h3>Fundamentos de Marketing Digital</h3>
+                            <p class="org">Google Digital Academy (Skillshop)</p>
+                        </div>
+                    </div>
+                    <p>Certificación completa en fundamentos de marketing digital, SEO, estrategias de contenido, analítica web y optimización de campañas digitales.</p>
                 </div>
+                
                 <div class="cert-item">
-                    <h3>Cómo funciona la inteligencia artificial generativa</h3>
-                    <p>Domestika | Fundamentos técnicos de la IA generativa</p>
+                    <div class="cert-header">
+                        <div class="cert-icon">💡</div>
+                        <div>
+                            <h3>Cómo funciona la IA generativa</h3>
+                            <p class="org">Domestika</p>
+                        </div>
+                    </div>
+                    <p>Curso especializado en los fundamentos técnicos y aplicaciones prácticas de la inteligencia artificial generativa en diversos contextos profesionales.</p>
                 </div>
+                
                 <div class="cert-item">
-                    <h3>Diseño y Mantenimiento de Instalaciones de Energía Solar Fotovoltaica</h3>
-                    <p>SEPE | Formación en energías renovables</p>
+                    <div class="cert-header">
+                        <div class="cert-icon">☀️</div>
+                        <div>
+                            <h3>Diseño y Mantenimiento de Instalaciones de Energía Solar</h3>
+                            <p class="org">SEPE</p>
+                        </div>
+                    </div>
+                    <p>Formación profesional en energías renovables, con enfoque en sistemas de energía solar fotovoltaica, demostrando versatilidad e interés por tecnologías sostenibles.</p>
                 </div>
             </div>
         </section>
         
         <section id="contacto">
-            <h2>Contacto</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span>📧</span>
-                    <a href="mailto:jrodriguez.webdev@gmail.com">jrodriguez.webdev@gmail.com</a>
+            <h2>¿Hablamos?</h2>
+            <p class="section-subtitle">Estoy disponible para proyectos, colaboraciones y nuevas oportunidades profesionales</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a href="mailto:jrodriguez.webdev@gmail.com">jrodriguez.webdev@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Ubicación</h3>
+                            <p>Ponteareas, Galicia, España</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/jose-antonio-rodriguez-tellado-243138398" target="_blank" class="social-btn">
+                            <span>👤</span> LinkedIn
+                        </a>
+                        <a href="https://www.instagram.com/joseantoniorodrigueztellado" target="_blank" class="social-btn">
+                            <span>📸</span> Instagram
+                        </a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <span>📍</span>
-                    <span>Ponteareas, Galicia, España</span>
+                
+                <div class="cta-box">
+                    <h3>🚀 ¿Tienes un proyecto?</h3>
+                    <p>Estoy abierto a colaboraciones, proyectos freelance y oportunidades laborales en el ámbito digital. ¡Contáctame y hablemos!</p>
+                    <a href="mailto:jrodriguez.webdev@gmail.com" class="btn">Enviar Email</a>
                 </div>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/jose-antonio-rodriguez-tellado-243138398" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com/joseantoniorodrigueztellado" target="_blank">Instagram</a>
             </div>
         </section>
     </main>
     
     <footer>
-        <p>&copy; 2026 Jose Rodriguez. Todos los derechos reservados.</p>    </footer>
+        <p>&copy; 2026 Jose Rodriguez. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Desarrollado con ❤️ y dedicación</p>
+    </footer>
 </body>
 </html>
