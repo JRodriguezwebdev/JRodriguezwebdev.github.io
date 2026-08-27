@@ -1,825 +1,315 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jose Rodriguez - Portfolio Profesional | Especialista en transición digital, marketing, IA y desarrollo web con +15 años de experiencia en Stellantis">
-    <meta name="keywords" content="desarrollo web, marketing digital, inteligencia artificial, portfolio, Stellantis, Galicia">
-    <meta name="author" content="Jose Rodriguez">
-        
-    <!-- Open Graph Meta Tags para LinkedIn -->
-    <meta property="og:title" content="Jose Rodriguez | Portfolio Profesional - Marketing Digital & Desarrollo Web">
-    <meta property="og:description" content="Descubre mi trayectoria profesional y proyectos en transformación digital. Portfolio completo con mi experiencia en Stellantis, certificaciones en IA, Marketing Digital y Desarrollo Web.">
-    <meta property="og:image" content="https://jrodriguezwebdev.github.io/portfolio-preview.jpg.jpeg">
-    <meta property="og:url" content="https://jrodriguezwebdev.github.io/">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Jose Rodriguez Portfolio">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Jose Rodriguez | Portfolio Profesional">
-    <meta name="twitter:description" content="Especialista en Transformación Digital | Marketing, IA & Desarrollo Web">
-    <meta name="twitter:image" content="https://jrodriguezwebdev.github.io/portfolio-preview.jpg.jpeg">
-    <title>Jose Rodriguez | Portfolio Profesional - Marketing Digital & Desarrollo Web</title>
-    <style>
-        :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-color: #f093fb;
-            --text-dark: #2d3748;
-            --text-light: #718096;
-            --bg-light: #f7fafc;
-            --bg-white: #ffffff;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
-            --shadow-xl: 0 20px 40px rgba(0,0,0,0.2);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            color: var(--text-dark);
-            background: var(--bg-light);
-            overflow-x: hidden;
-        }
-        
-        /* Hero Section */
-        header {
-            position: relative;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            color: white;
-            text-align: center;
-            padding: 8rem 2rem 6rem;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
-            animation: bgAnimate 60s linear infinite;
-        }
-        
-        @keyframes bgAnimate {
-            from { transform: translateX(0) translateY(0); }
-            to { transform: translateX(60px) translateY(60px); }
-        }
-        
-        header .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-        
-        header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            animation: fadeInDown 1s ease;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-        
-        header .subtitle {
-            font-size: 1.4rem;
-            font-weight: 300;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .btn-primary {
-            background: white;
-            color: var(--primary-color);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-secondary {
-            background: rgba(255,255,255,0.1);
-            color: white;
-            border: 2px solid white;
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Navigation */
-        nav {
-            background: white;
-            box-shadow: var(--shadow-md);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.95);
-        }
-        
-        nav .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-        }
-        
-        nav a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            transition: width 0.3s ease;
-        }
-        
-        nav a:hover {
-            color: var(--primary-color);
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
-        
-        /* Sections */
-        section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
-        }
-        
-        section h2 {
-            font-size: 2.75rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            position: relative;
-            padding-bottom: 1rem;
-        }
-        
-        section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            border-radius: 2px;
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 3rem;
-            max-width: 700px;
-        }
-        
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-        
-        .about-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-text strong {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: var(--text-light);
-            font-size: 1rem;
-            font-weight: 500;
-        }
-        
-        /* Skills Section */
-        #habilidades {
-            background: white;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-        
-        .skill-card {
-            background: var(--bg-light);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .skill-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .skill-card h3 {
-            color: var(--text-dark);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .skill-card p {
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .tag {
-            background: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-weight: 500;
-            box-shadow: var(--shadow-sm);
-        }
-        
-        /* Projects/Certifications Section */
-        #formacion {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-        
-        .certifications {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .cert-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: var(--shadow-md);
-            border-left: 5px solid var(--primary-color);
-            transition: all 0.3s ease;
-        }
-        
-        .cert-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .cert-header {
-            display: flex;
-            align-items: start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cert-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-        }
-        
-        .cert-item h3 {
-            color: var(--text-dark);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .cert-item .org {
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        
-        .cert-item p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-top: 1rem;
-            line-height: 1.6;
-        }
-        
-        /* Contact Section */
-        #contacto {
-            background: white;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            margin-top: 3rem;
-            align-items: start;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            padding: 1.5rem;
-            background: var(--bg-light);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            background: white;
-            box-shadow: var(--shadow-md);
-            transform: translateX(5px);
-        }
-        
-        .contact-icon {
-            font-size: 2rem;
-            color: var(--primary-color);
-        }
-        
-        .contact-details h3 {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-bottom: 0.3rem;
-        }
-        
-        .contact-details a,
-        .contact-details p {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        
-        .contact-details a:hover {
-            color: var(--primary-color);
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-btn {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.7rem;
-            padding: 1rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .social-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .cta-box {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 3rem;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .cta-box h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-box p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 2rem;
-        }
-        
-        .cta-box .btn {
-            background: white;
-            color: var(--primary-color);
-        }
-        
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #2d3748, #1a202c);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem;
-        }
-        
-        footer p {
-            opacity: 0.8;
-        }
-        
-        /* Responsive */
-        @media (max-width: 968px) {
-            header h1 { font-size: 2.5rem; }
-            header .subtitle { font-size: 1.1rem; }
-            section h2 { font-size: 2.2rem; }
-            .about-content,
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1.5rem;
-                font-size: 0.9rem;
-            }
-            .cta-buttons {
-                flex-direction: column;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            header {
-                padding: 5rem 1.5rem 4rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio profesional de Jose Antonio Rodriguez Tellado: más de 15 años en producción y operaciones industriales, mejora continua, marketing digital e IA aplicada.">
+  <meta name="keywords" content="operaciones industriales, producción, mejora continua, KPIs, automoción, marketing digital, inteligencia artificial, Stellantis, Galicia">
+  <meta name="author" content="Jose Antonio Rodriguez Tellado">
+  <meta name="theme-color" content="#0b1118">
+
+  <!-- Se conserva la tarjeta social existente -->
+  <meta property="og:title" content="Jose Rodriguez | Portfolio Profesional - Marketing Digital & Desarrollo Web">
+  <meta property="og:description" content="Descubre mi trayectoria profesional y proyectos en transformación digital. Portfolio completo con mi experiencia en Stellantis, certificaciones en IA, Marketing Digital y Desarrollo Web.">
+  <meta property="og:image" content="https://jrodriguezwebdev.github.io/portfolio-preview.jpg.jpeg">
+  <meta property="og:url" content="https://jrodriguezwebdev.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jose Rodriguez Portfolio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jose Rodriguez | Portfolio Profesional">
+  <meta name="twitter:description" content="Especialista en Transformación Digital | Marketing, IA & Desarrollo Web">
+  <meta name="twitter:image" content="https://jrodriguezwebdev.github.io/portfolio-preview.jpg.jpeg">
+  <title>Jose Antonio Rodriguez Tellado | Operaciones, mejora continua y digitalización</title>
+
+  <style>
+    :root {
+      --ink:#0b1118; --ink-soft:#111b25; --steel:#182633;
+      --paper:#f5f7f4; --white:#fff; --muted:#607080; --line:#dce3df;
+      --accent:#b8f238; --accent-dark:#6e9b00; --blue:#75b8ff;
+      --max:1180px; --radius:22px; --shadow:0 24px 70px rgba(11,17,24,.12);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+    a{color:inherit} p{margin:0} h1,h2,h3{margin:0;line-height:1.08}
+    .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
+    .skip-link{position:fixed;top:12px;left:12px;z-index:1000;padding:.75rem 1rem;background:var(--accent);color:var(--ink);font-weight:800;transform:translateY(-160%);transition:transform .2s}
+    .skip-link:focus{transform:translateY(0)}
+
+    .topbar{position:sticky;top:0;z-index:100;background:rgba(11,17,24,.92);border-bottom:1px solid rgba(255,255,255,.1);backdrop-filter:blur(16px)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+    .brand{display:inline-flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none;font-weight:800;letter-spacing:-.02em}
+    .brand-mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid rgba(184,242,56,.55);border-radius:11px;color:var(--accent);font-size:.82rem}
+    .nav ul{display:flex;align-items:center;gap:1.6rem;margin:0;padding:0;list-style:none}
+    .nav a:not(.brand){color:#cbd5df;text-decoration:none;font-size:.92rem;font-weight:650}
+    .nav a:hover{color:var(--accent)}
+
+    .hero{position:relative;isolation:isolate;overflow:hidden;color:var(--white);background:var(--ink);padding:7rem 0 6rem}
+    .hero::before{content:"";position:absolute;inset:0;z-index:-2;opacity:.18;background-image:linear-gradient(rgba(117,184,255,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(117,184,255,.22) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to right,transparent,black 50%,black)}
+    .hero::after{content:"";position:absolute;width:520px;height:520px;right:-210px;top:-230px;z-index:-1;border-radius:50%;background:rgba(184,242,56,.16);filter:blur(20px)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(330px,.75fr);align-items:center;gap:5rem}
+    .eyebrow{display:inline-flex;align-items:center;gap:.65rem;margin-bottom:1.4rem;color:var(--accent);font-size:.82rem;font-weight:850;letter-spacing:.13em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:30px;height:2px;background:currentColor}
+    h1{max-width:820px;font-size:clamp(3rem,7vw,6.2rem);letter-spacing:-.065em}
+    .hero h1 span{color:var(--accent)}
+    .hero-copy{max-width:720px;margin-top:1.7rem;color:#c0ccd7;font-size:clamp(1.05rem,2vw,1.28rem)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2.2rem}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.85rem 1.25rem;border:1px solid transparent;border-radius:12px;text-decoration:none;font-weight:800;transition:transform .2s,background .2s,border-color .2s}
+    .button:hover{transform:translateY(-2px)}
+    .button-primary{background:var(--accent);color:var(--ink)}
+    .button-secondary{border-color:#415160;color:var(--white);background:rgba(255,255,255,.03)}
+    .button-secondary:hover{border-color:var(--accent)}
+
+    .process-card{padding:1.6rem;border:1px solid rgba(255,255,255,.12);border-radius:26px;background:rgba(17,27,37,.86);box-shadow:0 35px 80px rgba(0,0,0,.35)}
+    .process-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;color:#aab8c4;font-size:.8rem;text-transform:uppercase;letter-spacing:.12em}
+    .status{display:inline-flex;align-items:center;gap:.45rem;color:var(--accent)}
+    .status::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 5px rgba(184,242,56,.08)}
+    .process-list{display:grid;gap:.75rem}
+    .process-step{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:.8rem;padding:.9rem;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.035)}
+    .process-step strong{font-size:.92rem}.process-step small{display:block;color:#8293a2}
+    .step-number{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--steel);color:var(--blue);font-weight:850}
+    .step-check{color:var(--accent);font-size:1.1rem}
+
+    .proof-strip{color:var(--white);background:var(--ink-soft);border-top:1px solid #253440}
+    .proof-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+    .proof{padding:1.65rem 1.5rem;border-right:1px solid #253440}
+    .proof:last-child{border-right:0}.proof strong{display:block;color:var(--accent);font-size:1.55rem;letter-spacing:-.04em}.proof span{color:#a8b6c2;font-size:.9rem}
+
+    section{padding:6.5rem 0;scroll-margin-top:70px}
+    .section-head{display:grid;grid-template-columns:minmax(0,.75fr) minmax(300px,.55fr);justify-content:space-between;align-items:end;gap:3rem;margin-bottom:3rem}
+    .kicker{color:var(--accent-dark);font-size:.78rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+    h2{margin-top:.7rem;font-size:clamp(2.2rem,4vw,4rem);letter-spacing:-.055em}
+    .section-intro{color:var(--muted);font-size:1.06rem}
+
+    .value-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1.2rem}
+    .story,.principles{padding:clamp(1.6rem,4vw,3rem);border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}
+    .story p{color:#465766;font-size:1.08rem}.story p+p{margin-top:1.15rem}.story strong{color:var(--ink)}
+    .principles{color:var(--white);background:var(--ink);border-color:var(--ink)}
+    .principles h3{font-size:1.25rem}.principles ul{display:grid;gap:1rem;margin:1.5rem 0 0;padding:0;list-style:none}
+    .principles li{display:grid;grid-template-columns:26px 1fr;gap:.8rem;color:#c2ced8}.principles li::before{content:"✓";color:var(--accent);font-weight:900}
+
+    .projects{background:#eaf0ec}
+    .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .project-card{display:flex;min-height:440px;flex-direction:column;padding:1.8rem;border:1px solid #d1dbd5;border-radius:var(--radius);background:var(--white);box-shadow:0 10px 30px rgba(11,17,24,.04)}
+    .project-number{color:var(--accent-dark);font-weight:900;letter-spacing:.08em}
+    .project-card h3{margin-top:2rem;font-size:1.55rem;letter-spacing:-.035em}
+    .project-type{margin-top:.55rem;color:var(--muted);font-size:.87rem;font-weight:750;text-transform:uppercase;letter-spacing:.06em}
+    .project-card>p{margin-top:1.25rem;color:#536472}
+    .project-points{display:grid;gap:.65rem;margin:1.3rem 0 1.8rem;padding:0;list-style:none}
+    .project-points li{display:grid;grid-template-columns:16px 1fr;gap:.55rem;color:#344653;font-size:.92rem}
+    .project-points li::before{content:"→";color:var(--accent-dark);font-weight:900}
+    .project-link{margin-top:auto;color:var(--ink);font-weight:850;text-underline-offset:4px}.project-link:hover{color:var(--accent-dark)}
+
+    .experience-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:4rem}
+    .experience-aside{align-self:start;padding:2rem;border-radius:var(--radius);color:var(--white);background:var(--ink);position:sticky;top:104px}
+    .experience-aside .big{color:var(--accent);font-size:4.4rem;font-weight:900;letter-spacing:-.08em;line-height:.9}
+    .experience-aside p{margin-top:.8rem;color:#b5c2cd}
+    .experience-main h3{font-size:1.7rem}.experience-meta{margin-top:.55rem;color:var(--accent-dark);font-weight:800}
+    .experience-main>p{margin-top:1.2rem;color:#536472;font-size:1.05rem}
+    .capabilities{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin-top:2rem}
+    .capability{padding:1rem;border:1px solid var(--line);border-radius:13px;background:var(--white);font-weight:720}
+
+    .skills{color:var(--white);background:var(--ink)}
+    .skills .kicker{color:var(--accent)}.skills .section-intro{color:#aab8c4}
+    .skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.85rem}
+    .skill-card{padding:1.5rem;border:1px solid #263642;border-radius:18px;background:var(--ink-soft)}
+    .skill-card .index{color:var(--accent);font-size:.75rem;font-weight:900}.skill-card h3{margin-top:1.5rem;font-size:1.2rem}.skill-card p{margin-top:.8rem;color:#9eafbc;font-size:.93rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}.tag{padding:.38rem .6rem;border:1px solid #304250;border-radius:999px;color:#c8d2da;font-size:.76rem}
+
+    .training-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+    .training-item{display:grid;grid-template-columns:52px 1fr;gap:1rem;padding:1.3rem;border:1px solid var(--line);border-radius:16px;background:var(--white)}
+    .training-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:14px;background:#edf6d4;color:#456400;font-weight:900}
+    .training-item h3{font-size:1rem;line-height:1.35}.training-item p{margin-top:.35rem;color:var(--muted);font-size:.88rem}
+
+    .contact{padding-top:2rem}
+    .contact-panel{display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;padding:clamp(2rem,6vw,4.5rem);border-radius:30px;color:var(--white);background:var(--ink);box-shadow:var(--shadow)}
+    .contact-panel h2{max-width:760px}.contact-panel p{max-width:680px;margin-top:1rem;color:#aebbc6}
+    .contact-actions{display:grid;gap:.65rem;min-width:220px}.contact-actions .button{width:100%}
+    footer{padding:2.6rem 0;color:#71808d;font-size:.9rem}
+    .footer-row{display:flex;justify-content:space-between;gap:2rem;border-top:1px solid var(--line);padding-top:2rem}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:4px;border-radius:6px}
+
+    @media(max-width:980px){
+      .hero-grid,.section-head,.value-grid,.experience-grid{grid-template-columns:1fr}
+      .hero-grid{gap:3rem}.project-grid{grid-template-columns:1fr 1fr}
+      .project-card:last-child{grid-column:1/-1;min-height:auto}.skill-grid{grid-template-columns:1fr 1fr}.experience-aside{position:static}
+    }
+    @media(max-width:700px){
+      .container{width:min(calc(100% - 28px),var(--max))}.nav{min-height:64px}.brand span:last-child{display:none}
+      .nav ul{gap:.9rem;overflow-x:auto}.nav li:nth-child(3){display:none}.nav a:not(.brand){font-size:.82rem;white-space:nowrap}
+      .hero{padding:4.7rem 0 4rem}h1{font-size:clamp(2.9rem,15vw,4.2rem)}.process-card{padding:1.1rem}
+      .proof-grid{grid-template-columns:1fr}.proof{border-right:0;border-bottom:1px solid #253440}.proof:last-child{border-bottom:0}
+      section{padding:4.5rem 0}.project-grid,.skill-grid,.training-grid,.capabilities{grid-template-columns:1fr}
+      .project-card,.project-card:last-child{grid-column:auto;min-height:auto}.contact-panel{grid-template-columns:1fr}.contact-actions{min-width:0}
+      .footer-row{flex-direction:column;gap:.45rem}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important}}
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Jose Rodriguez</h1>
-            <p class="subtitle">Especialista en Transformación Digital | Marketing, IA & Desarrollo Web<br>Con +15 años de experiencia en gestión operativa en Stellantis</p>
-            <div class="cta-buttons">
-                <a href="#contacto" class="btn btn-primary">Contactar</a>
-                <a href="#sobre-mi" class="btn btn-secondary">Conocer Más</a>
-            </div>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <nav class="topbar" aria-label="Navegación principal">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio"><span class="brand-mark">JR</span><span>Jose Antonio Rodriguez</span></a>
+      <ul>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#formacion">Formación</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Operaciones · datos · digitalización</p>
+        <h1>La experiencia industrial también <span>transforma.</span></h1>
+        <p class="hero-copy">Soy Jose Antonio Rodriguez Tellado. Aporto más de 15 años en producción y operaciones dentro del sector de la automoción, con mentalidad de procesos, calidad y mejora continua. Ahora aplico esa base a proyectos de marketing digital e inteligencia artificial.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#proyectos">Ver proyectos</a>
+          <a class="button button-secondary" href="https://www.linkedin.com/in/jarodriguezmarketing/" target="_blank" rel="noopener noreferrer">Ver LinkedIn ↗</a>
         </div>
-    </header>
-    
-    <nav>
-        <div class="container">
+      </div>
+      <aside class="process-card" aria-label="Mi forma de trabajar">
+        <div class="process-head"><span>Método de trabajo</span><span class="status">En mejora continua</span></div>
+        <div class="process-list">
+          <div class="process-step"><span class="step-number">01</span><span><strong>Observar</strong><small>Entender el problema real</small></span><span class="step-check">✓</span></div>
+          <div class="process-step"><span class="step-number">02</span><span><strong>Medir</strong><small>Definir señales y KPIs</small></span><span class="step-check">✓</span></div>
+          <div class="process-step"><span class="step-number">03</span><span><strong>Actuar</strong><small>Priorizar acciones viables</small></span><span class="step-check">✓</span></div>
+          <div class="process-step"><span class="step-number">04</span><span><strong>Mejorar</strong><small>Revisar y ajustar</small></span><span class="step-check">↗</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <div class="proof-strip" aria-label="Datos destacados">
+    <div class="container proof-grid">
+      <div class="proof"><strong>15+ años</strong><span>Experiencia en automoción</span></div>
+      <div class="proof"><strong>250 horas</strong><span>Competencias digitales · 10 ECTS</span></div>
+      <div class="proof"><strong>3 casos</strong><span>Procesos, marketing e IA aplicada</span></div>
+    </div>
+  </div>
+
+  <main id="contenido">
+    <section id="sobre-mi">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Mi propuesta de valor</p><h2>No empiezo de cero. Cambio el contexto.</h2></div>
+          <p class="section-intro">Mi ventaja está en unir disciplina industrial y aprendizaje digital: detectar problemas, ordenar información y convertirla en decisiones que se puedan ejecutar y medir.</p>
+        </div>
+        <div class="value-grid">
+          <article class="story">
+            <p>Trabajo en <strong>Stellantis Vigo</strong> desde hace más de 15 años. La producción industrial me ha enseñado que un proceso sólido depende de estándares claros, coordinación, calidad y capacidad para responder cuando algo cambia.</p>
+            <p>Mi transición hacia el entorno digital parte de esa experiencia. No busco esconder mi trayectoria industrial, sino trasladar lo aprendido a proyectos de <strong>marketing digital, inteligencia artificial aplicada y mejora de procesos</strong>.</p>
+            <p>Mi objetivo profesional es crecer en posiciones donde la experiencia operativa sea una ventaja y la tecnología ayude a trabajar mejor.</p>
+          </article>
+          <aside class="principles">
+            <h3>Lo que aporto desde el primer día</h3>
             <ul>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
-                <li><a href="#habilidades">Competencias</a></li>
-                <li><a href="#formacion">Formación</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+              <li>Mentalidad de procesos y mejora continua.</li>
+              <li>Experiencia real en entornos de alta exigencia.</li>
+              <li>Uso práctico de datos para priorizar.</li>
+              <li>Aprendizaje continuo sin vender humo.</li>
+              <li>Comunicación directa y orientación a resultados.</li>
             </ul>
+          </aside>
         </div>
-    </nav>
-    
-    <main>
-        <section id="sobre-mi">
-            <h2>Sobre Mí</h2>
-            <p class="section-subtitle">Profesional versátil en transición digital con sólida experiencia industrial</p>
-            
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Mi nombre es <strong>Jose Rodriguez</strong>, y soy un profesional con <strong>más de 15 años de trayectoria</strong> como operario de producción en <strong>Stellantis</strong>, una de las empresas líderes en el sector de la automoción a nivel mundial.</p>
-                    
-                    <p>Durante mi carrera en el ámbito industrial, he desarrollado competencias clave en <strong>gestión de procesos productivos</strong>, <strong>control de calidad</strong>, <strong>optimización de flujos de trabajo</strong> y <strong>trabajo en equipo</strong> bajo entornos de alta exigencia. Esta experiencia me ha dotado de una mentalidad analítica, orientada a resultados y con enfoque en la mejora continua.</p>
-                    
-                    <p>Actualmente, me encuentro en un emocionante proceso de <strong>transición profesional hacia el ecosistema digital</strong>, especializándome en en tres áreas de alto impacto: <strong>Marketing Digital</strong>, <strong>Inteligencia Artificial</strong> y <strong>Desarrollo Web</strong>.</p>
-                    
-                    <p>Mi objetivo es combinar mi experiencia en gestión operativa con las nuevas tecnologías para aportar valor en proyectos de transformación digital, ayudando a empresas a optimizar sus procesos y mejorar su presencia online.</p>
-                </div>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Años de Experiencia</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">6+</div>
-                        <div class="stat-label">Certificaciones</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Compromiso</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Áreas de Especialización</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="habilidades">
-            <h2>Competencias Clave</h2>
-            <p class="section-subtitle">Combinando experiencia industrial con habilidades digitales de vanguardia</p>
-            
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">🤖</div>
-                    <h3>Inteligencia Artificial</h3>
-                    <p>Experiencia práctica con herramientas de IA generativa para optimización de procesos, creación de contenido y automatización de flujos de trabajo.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Gemini AI</span>
-                        <span class="tag">ChatGPT</span>
-                        <span class="tag">Workflow Automation</span>
-                        <span class="tag">Prompt Engineering</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">📱</div>
-                    <h3>Marketing Digital</h3>
-                    <p>Sólidos fundamentos en estrategias digitales, SEO, gestión de contenidos y analítica web para maximizar presencia y conversión online.</p>
-                    <div class="skill-tags">
-                        <span class="tag">SEO</span>
-                        <span class="tag">Google Analytics</span>
-                        <span class="tag">Social Media</span>
-                        <span class="tag">Content Strategy</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h3>Desarrollo Web</h3>
-                    <p>Creación de sitios web modernos, responsive y funcionales utilizando tecnologías actuales y buenas prácticas de desarrollo.</p>
-                    <div class="skill-tags">
-                        <span class="tag">HTML5/CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">Responsive Design</span>
-                        <span class="tag">Git/GitHub</span>
-                    </div>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">🔧</div>
-                    <h3>Gestión Operativa</h3>
-                    <p>Amplia experiencia en optimización de procesos productivos, control de calidad y trabajo en equipos de alto rendimiento.</p>
-                    <div class="skill-tags">
-                        <span class="tag">Lean Manufacturing</span>
-                        <span class="tag">Control de Calidad</span>
-                        <span class="tag">Mejora Continua</span>
-                        <span class="tag">Trabajo en Equipo</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="formacion">
-            <h2>Formación & Certificaciones</h2>
-            <p class="section-subtitle">Compromiso continuo con el aprendizaje y el desarrollo profesional</p>
-            
-            <div class="certifications">
-                <div class="cert-item">
-                    <div class="cert-header">
-                        <div class="cert-icon">🎓</div>
-                        <div>
-                            <h3>IA Workflow 2025</h3>
-                            <p class="org">BIG school</p>
-                        </div>
-                    </div>
-                    <p>Formación especializada en la aplicación práctica de inteligencia artificial para la optimización de flujos de trabajo empresariales y automatización de procesos.</p>
-                </div>
-                
-                <div class="cert-item">
-                    <div class="cert-header">
-                        <div class="cert-icon">🤖</div>
-                        <div>
-                            <h3>Domina la IA con Gemini</h3>
-                            <p class="org">Google Skillshop</p>
-                        </div>
-                    </div>
-                    <p>Certificación oficial de Google en el dominio y aplicación de herramientas de IA generativa, con enfoque en productividad y creación de contenido.</p>
-                </div>
-                
-                <div class="cert-item">
-                    <div class="cert-header">
-                        <div class="cert-icon">📊</div>
-                        <div>
-                            <h3>Fundamentos de Marketing Digital</h3>
-                            <p class="org">Google Digital Academy (Skillshop)</p>
-                        </div>
-                    </div>
-                    <p>Certificación completa en fundamentos de marketing digital, SEO, estrategias de contenido, analítica web y optimización de campañas digitales.</p>
-                </div>
-                
-                <div class="cert-item">
-                    <div class="cert-header">
-                        <div class="cert-icon">💡</div>
-                        <div>
-                            <h3>Cómo funciona la IA generativa</h3>
-                            <p class="org">Domestika</p>
-                        </div>
-                    </div>
-                    <p>Curso especializado en los fundamentos técnicos y aplicaciones prácticas de la inteligencia artificial generativa en diversos contextos profesionales.</p>
-                </div>
-                
-                <div class="cert-item">
-                    <div class="cert-header">
-                        <div class="cert-icon">☀️</div>
-                        <div>
-                            <h3>Diseño y Mantenimiento de Instalaciones de Energía Solar</h3>
-                            <p class="org">SEPE</p>
-                        </div>
-                    </div>
-                    <p>Formación profesional en energías renovables, con enfoque en sistemas de energía solar fotovoltaica, demostrando versatilidad e interés por tecnologías sostenibles.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contacto">
-            <h2>¿Hablamos?</h2>
-            <p class="section-subtitle">Estoy disponible para proyectos, colaboraciones y nuevas oportunidades profesionales</p>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">📧</div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <a href="mailto:jrodriguez.webdev@gmail.com">jrodriguez.webdev@gmail.com</a>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">📍</div>
-                        <div class="contact-details">
-                            <h3>Ubicación</h3>
-                            <p>Ponteareas, Galicia, España</p>
-                        </div>
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/jose-antonio-rodriguez-tellado-243138398" target="_blank" class="social-btn">
-                            <span>👤</span> LinkedIn
-                        </a>
-                        <a href="https://www.instagram.com/joseantoniorodrigueztellado" target="_blank" class="social-btn">
-                            <span>📸</span> Instagram
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="cta-box">
-                    <h3>🚀 ¿Tienes un proyecto?</h3>
-                    <p>Estoy abierto a colaboraciones, proyectos freelance y oportunidades laborales en el ámbito digital. ¡Contáctame y hablemos!</p>
-                    <a href="mailto:jrodriguez.webdev@gmail.com" class="btn">Enviar Email</a>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2026 Jose Rodriguez. Todos los derechos reservados.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Desarrollado con ❤️ y dedicación</p>
-    </footer>
+      </div>
+    </section>
+
+    <section class="projects" id="proyectos">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Casos prácticos</p><h2>Trabajo que demuestra cómo pienso.</h2></div>
+          <p class="section-intro">Proyectos honestos y aplicables. Cada caso parte de un problema concreto, define prioridades y termina con acciones o entregables verificables.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <span class="project-number">CASO 01</span><h3>Auditoría digital y plan 30-60-90</h3>
+            <p class="project-type">Yessi Spanish Fashion · Caso práctico</p>
+            <p>Análisis de presencia digital para convertir observaciones dispersas en una hoja de ruta priorizada para un pequeño negocio.</p>
+            <ul class="project-points"><li>Revisión de propuesta de valor y canales.</li><li>Plan de contenidos y acciones por fases.</li><li>KPIs sencillos para medir avance.</li></ul>
+            <a class="project-link" href="mailto:jrodriguez.webdev@gmail.com?subject=Consulta%20sobre%20el%20caso%20Yessi%20Spanish%20Fashion">Solicitar información →</a>
+          </article>
+          <article class="project-card">
+            <span class="project-number">CASO 02</span><h3>Sistema de seguimiento profesional</h3>
+            <p class="project-type">Proyecto propio · Procesos y KPIs</p>
+            <p>Diseño de un sistema para valorar oportunidades, adaptar documentos y controlar el estado de cada candidatura sin perder foco.</p>
+            <ul class="project-points"><li>Criterios de encaje y descarte.</li><li>Versionado de CV según tipo de puesto.</li><li>Registro de estados y revisión semanal.</li></ul>
+            <a class="project-link" href="#contacto">Comentar el método →</a>
+          </article>
+          <article class="project-card">
+            <span class="project-number">CASO 03</span><h3>Portfolio profesional responsive</h3>
+            <p class="project-type">Proyecto propio · Web y posicionamiento</p>
+            <p>Diseño y desarrollo de esta web para presentar experiencia, transición profesional y proyectos con una narrativa coherente.</p>
+            <ul class="project-points"><li>Arquitectura de contenidos y copy.</li><li>HTML y CSS responsive.</li><li>SEO básico y accesibilidad.</li></ul>
+            <a class="project-link" href="https://github.com/jrodriguezwebdev/jrodriguezwebdev.github.io" target="_blank" rel="noopener noreferrer">Ver código en GitHub ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Experiencia</p><h2>Una base industrial que suma.</h2></div>
+          <p class="section-intro">La automoción me ha dado algo difícil de aprender solo con cursos: criterio operativo, constancia y respeto por los procesos que tienen que funcionar de verdad.</p>
+        </div>
+        <div class="experience-grid">
+          <aside class="experience-aside"><div class="big">15+</div><p>años trabajando en producción dentro de un entorno industrial exigente y orientado a estándares.</p></aside>
+          <article class="experience-main">
+            <h3>Producción y operaciones industriales</h3><p class="experience-meta">Stellantis Vigo · Actualidad</p>
+            <p>Experiencia directa en procesos productivos del sector de la automoción, trabajando con objetivos de calidad, ritmo, coordinación y cumplimiento de procedimientos. Esta trayectoria sustenta mi forma de abordar cualquier proyecto nuevo: observar, medir, actuar y revisar.</p>
+            <div class="capabilities"><div class="capability">Procesos productivos</div><div class="capability">Control de calidad</div><div class="capability">Mejora continua</div><div class="capability">Resolución de incidencias</div><div class="capability">Trabajo en equipo</div><div class="capability">Entornos de alta exigencia</div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills" id="competencias">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Competencias</p><h2>Capacidades conectadas con la práctica.</h2></div>
+          <p class="section-intro">No presento una lista infinita de herramientas. Destaco las áreas que ya aplico y las que continúo desarrollando.</p>
+        </div>
+        <div class="skill-grid">
+          <article class="skill-card"><span class="index">01</span><h3>Operaciones</h3><p>Procesos, calidad, coordinación y respuesta ante incidencias.</p><div class="tags"><span class="tag">Producción</span><span class="tag">Calidad</span><span class="tag">Mejora continua</span></div></article>
+          <article class="skill-card"><span class="index">02</span><h3>Datos y KPIs</h3><p>Definición de indicadores útiles para decidir y hacer seguimiento.</p><div class="tags"><span class="tag">KPIs</span><span class="tag">Análisis</span><span class="tag">Priorización</span></div></article>
+          <article class="skill-card"><span class="index">03</span><h3>Marketing digital</h3><p>Fundamentos de estrategia, contenidos, SEO y analítica.</p><div class="tags"><span class="tag">Contenido</span><span class="tag">SEO</span><span class="tag">Analítica</span></div></article>
+          <article class="skill-card"><span class="index">04</span><h3>IA aplicada</h3><p>Uso de IA generativa para investigar, estructurar y mejorar flujos de trabajo.</p><div class="tags"><span class="tag">ChatGPT</span><span class="tag">Gemini</span><span class="tag">Prompts</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="formacion">
+      <div class="container">
+        <div class="section-head">
+          <div><p class="kicker">Formación</p><h2>Aprendizaje continuo, con aplicación real.</h2></div>
+          <p class="section-intro">Formación seleccionada para reforzar competencias digitales, marketing, inteligencia artificial y tecnología.</p>
+        </div>
+        <div class="training-grid">
+          <article class="training-item"><span class="training-icon">250h</span><div><h3>Competencias Dixitais Intermedias</h3><p>250 horas · 10 ECTS · 2026</p></div></article>
+          <article class="training-item"><span class="training-icon">IA</span><div><h3>IA Workflow</h3><p>BIG School · 2026</p></div></article>
+          <article class="training-item"><span class="training-icon">MKT</span><div><h3>Fundamentos de Marketing Digital</h3><p>Google Digital Academy · Skillshop</p></div></article>
+          <article class="training-item"><span class="training-icon">AI</span><div><h3>Domina la IA con Gemini</h3><p>Google Skillshop</p></div></article>
+          <article class="training-item"><span class="training-icon">GEN</span><div><h3>Cómo funciona la IA generativa</h3><p>Domestika</p></div></article>
+          <article class="training-item"><span class="training-icon">SOL</span><div><h3>Diseño y mantenimiento de instalaciones de energía solar fotovoltaica</h3><p>Aula de Formación Superior · 2026</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div class="container contact-panel">
+        <div><p class="kicker">Contacto</p><h2>¿Buscas experiencia operativa con mentalidad digital?</h2><p>Estoy abierto a oportunidades relacionadas con operaciones, mejora continua, digitalización y marketing digital junior, especialmente donde mi experiencia industrial pueda aportar valor.</p></div>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:jrodriguez.webdev@gmail.com">Enviar email</a>
+          <a class="button button-secondary" href="https://www.linkedin.com/in/jarodriguezmarketing/" target="_blank" rel="noopener noreferrer">Conectar en LinkedIn ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-row"><span>© 2026 Jose Antonio Rodriguez Tellado</span><span>Ponteareas · Galicia · España</span></div></footer>
 </body>
 </html>
